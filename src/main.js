@@ -21,7 +21,7 @@ const routes = [
   },
   {
         name: 'Adicionar',
-        path: '/adicionar',
+        path: '/adicionar ',
         component: adicionarItem
   },
   {
@@ -40,5 +40,5 @@ const router = new VueRouter({ mode: 'history', routes: routes });
 
 
 new Vue({
-  render: h => h(App)
+  render: h => h(App), router
 }).$mount('#app')
