@@ -16,6 +16,9 @@
         <td>
           <router-link :to="{ name: 'Editar', params: {id: item['.key']} }" class="btn btn-warning">Editar</router-link>
         </td>
+        <td>
+          <button @click="deletarItem(item['.key'])" class="btn btn-danger">Deletar</button>
+        </td>
       </tr>
     </tbody>
   </table>
@@ -36,6 +39,11 @@ export default {
   },
   firebase: {
     items: db.ref('items')
+  },
+  methods:{
+    deletarItem(key){
+      this.$firebaseRefs.items.child(key).remove();
+    }
   }
 }
 </script>
